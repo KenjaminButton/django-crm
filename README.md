@@ -1,4 +1,4 @@
-# Kenjamin Button's Django CR
+# Kenjamin Button's Django CRM
 
 Technologies Used:
 
