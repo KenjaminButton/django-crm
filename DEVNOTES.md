@@ -1,12 +1,12 @@
 # TodoList
 
 - [x] Create virtual environment, install `django` and create project
-- [] Base pages/ templates
+- [x] Base pages/ templates
 
-  - Create app for pages
-  - Create base template
-  - Create front page
-  - Create ABOUT US page
+  - [x] Create app for pages
+  - [x] Create base template
+  - [x] Create front page
+  - [x] Create ABOUT US page
 
 - [] Authentication
 - [] Simple dashboard
