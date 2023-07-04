@@ -22,6 +22,10 @@
     <p class="font-semibold">Modified at</p>
     <p class="mb-6">{{ lead.modified_at|date:"M-d-Y H:i" }}</p>
 
+    <hr class="my-4">
+    <a href="{% url 'leads_delete' lead.id %}">Delete</a>
+    <hr class="my-4">
+
     <a href="{% url 'showleads' %}">Back to Leads</a>
   </div>
 {% endblock %}

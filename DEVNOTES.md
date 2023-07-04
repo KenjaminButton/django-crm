@@ -18,15 +18,15 @@
   - [x] Create DB model for userprofiles
   - [x] Simple dashboard
 
-- [] Create new leads
+- [x] Create new leads
 
   - [x] New Django App
   - [x] Set up Django models
   - [x] Create views and forms for leads
   - [x] Need page to list out all our leads
-  - [] View detail page of leads
+  - [x] View detail page of leads
 
-- [] Change and delete leads
+- [] Delete and edit leads
 - [] Convert leads to clients
 - [] Change and delete clients
 - [] Implement solution for teams
