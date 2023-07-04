@@ -1,4 +1,4 @@
-# Django CRM (Salmon Theme)
+# Kenjamin Button's Django CR
 
 Technologies Used:
 
