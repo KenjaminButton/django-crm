@@ -11,11 +11,11 @@
 - [x] Authentication
 
   - [x] Create DB model for userprofiles
-  - [x] sign up functionality
-  - [x] login functionality
-  - [x] logout functionality
-  - [x] Create DB model for userprofiles
-  - [x] Create DB model for userprofiles
+  - [] sign up functionality
+  - [] login functionality
+  - [] logout functionality
+  - [] Create DB model for userprofiles
+  - [] Create DB model for userprofiles
 
 - [] Simple dashboard
 - [] Create new leads
