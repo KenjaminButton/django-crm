@@ -17,12 +17,30 @@ def leads_detail(request, pk):
 
 
 @login_required
+def leads_edit(request, pk):
+    lead = get_object_or_404(Lead, created_by=request.user, pk=pk)
+
+    if request.method == 'POST':
+        form = AddLeadForm(request.POST, instance=lead)
+
+        if form.is_valid():
+            form.save()
+            messages.success(
+                request, 'your lead has been edited successfully and saved')
+            return redirect('showleads')
+    else:
+        form = AddLeadForm(instance=lead)
+
+    return render(request, 'lead/leadsedit.html', {
+        'form': form
+    })
+
+
+@login_required
 def leads_delete(request, pk):
     lead = get_object_or_404(Lead, created_by=request.user, pk=pk)
     lead.delete()
-
     messages.success(request, 'your lead has been deleted')
-    # or show_leads???
     return redirect('showleads')
 
 
