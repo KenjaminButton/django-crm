@@ -11,14 +11,21 @@
 - [x] Authentication
 
   - [x] Create DB model for userprofiles
-  - [] sign up functionality
-  - [] login functionality
-  - [] logout functionality
-  - [] Create DB model for userprofiles
-  - [] Create DB model for userprofiles
+  - [x] sign up functionality
+  - [x] login functionality
+  - [x] logout functionality
+  - [x] Create DB model for userprofiles
+  - [x] Create DB model for userprofiles
+  - [x] Simple dashboard
 
-- [] Simple dashboard
 - [] Create new leads
+
+  - [x] New Django App
+  - [x] Set up Django models
+  - [] Create views and forms for leads
+  - [] Need page to list out all our leads
+  - [] View detail page of leads
+
 - [] Change and delete leads
 - [] Convert leads to clients
 - [] Change and delete clients
@@ -29,4 +36,5 @@
 1. To activate virtual environment, `source django.env/bin/activate`
 2. To start app on dev server, `python3 manage.py runserver`
 
+**Need to install tailwind and disregard CDN upon deployment**
 [Tailwind CSS CDN](https://tailwindcss.com/docs/installation/play-cdn)
