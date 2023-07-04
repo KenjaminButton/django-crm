@@ -22,8 +22,10 @@
           <p class="px-2 py-2 w-full {% cycle 'bg-slate-100' '' %}">{{ lead.get_priority_display }}</p>
           <p class="px-2 py-2 w-full {% cycle 'bg-slate-100' '' %}">{{ lead.get_status_display }}</p>
         </div>
+    {% empty %}
+        <p class="mx-2">There are no leads in the database yet</p>
     {% endfor %}
-
+  
   </div>
 {% endblock %}
 
