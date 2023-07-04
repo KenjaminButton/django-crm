@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Leads {% endblock %}
+
+{% block content %}
+  <div class="px-6 py-6">
+    <h1 class="mb-4 text-xl">Leads</h1>
+    <a href="{% url 'showleads' %}" class="inline-block px-6 py-4 bg-rose-400 rounded-xl text-white"
+    >Show leads
+    </a>
+
+    <div class="flex mt-6 justify-between">
+      <p class="py-4 px-2 bg-slate-200 font-semibold w-full">Name</p>
+      <p class="py-4 px-2 bg-slate-200 font-semibold w-full">Priority</p>
+      <p class="py-4 px-2 bg-slate-200 font-semibold w-full">Status</p>
+    </div>
+    {% for lead in leads %}
+        <div class="flex justify-between">
+          <p class="px-2 py-2 w-full">{{ lead.name }}</p>
+          <p class="px-2 py-2 w-full">{{ lead.priority }}</p>
+          <p class="px-2 py-2 w-full">{{ lead.status }}</p>
+        </div>
+    {% endfor %}
+
+  </div>
+{% endblock %}
+

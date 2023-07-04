@@ -5,5 +5,6 @@ from . import views
 
 
 urlpatterns = [
-    path('addlead/', views.add_lead, name='addlead')
+    path('', views.show_leads, name='showleads'),
+    path('addlead/', views.add_lead, name='addlead'),
 ]
