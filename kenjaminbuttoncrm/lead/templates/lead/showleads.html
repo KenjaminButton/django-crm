@@ -16,9 +16,9 @@
     </div>
     {% for lead in leads %}
         <div class="flex justify-between">
-          <p class="px-2 py-2 w-full">{{ lead.name }}</p>
-          <p class="px-2 py-2 w-full">{{ lead.priority }}</p>
-          <p class="px-2 py-2 w-full">{{ lead.status }}</p>
+          <p class="px-2 py-2 w-full {% cycle 'bg-slate-100' '' %}">{{ lead.name }}</p>
+          <p class="px-2 py-2 w-full {% cycle 'bg-slate-100' '' %}">{{ lead.get_priority_display }}</p>
+          <p class="px-2 py-2 w-full {% cycle 'bg-slate-100' '' %}">{{ lead.get_status_display }}</p>
         </div>
     {% endfor %}
 

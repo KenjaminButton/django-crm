@@ -22,8 +22,8 @@
 
   - [x] New Django App
   - [x] Set up Django models
-  - [] Create views and forms for leads
-  - [] Need page to list out all our leads
+  - [x] Create views and forms for leads
+  - [x] Need page to list out all our leads
   - [] View detail page of leads
 
 - [] Change and delete leads
