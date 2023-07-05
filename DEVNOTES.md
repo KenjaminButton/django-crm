@@ -26,8 +26,8 @@
   - [x] Need page to list out all our leads
   - [x] View detail page of leads
 
-- [] Delete and edit leads
-- [] Convert leads to clients
+- [x] Delete and edit leads
+- [x] Convert leads to clients
 - [] Change and delete clients
 - [] Implement solution for teams
 - [] Implement a payment solution / Monthly recurring payments
