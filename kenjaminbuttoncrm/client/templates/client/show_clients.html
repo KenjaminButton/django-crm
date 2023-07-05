@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Clients {% endblock %}
+
+{% block content %}
+  <div class="px-6 py-6">
+    <h1 class="mb-4 text-xl">Clients</h1>
+    <a href="#" class="inline-block px-6 py-4 bg-rose-400 rounded-xl text-white"
+    >Show clients
+    </a>
+
+    <div class="flex mt-6 justify-between">
+      <p class="py-4 px-2 bg-slate-200 font-semibold w-full">Name</p>
+    </div>
+    {% for client in clients %}
+        <div class="flex justify-between">
+          <p class="px-2 py-2 w-full {% cycle 'bg-slate-100' '' %}">
+            <a href="#">{{ client.name }}</a>
+          </p>
+        </div>
+    {% empty %}
+        <p class="mx-2">There are no clients in the database yet</p>
+    {% endfor %}
+  
+  </div>
+{% endblock %}
+
