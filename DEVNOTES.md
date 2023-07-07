@@ -32,7 +32,7 @@
 - [x] Show details page of a client
 - [x] Adding a client while skipping leads process
 
-- [] Change and delete clients
+- [x] Edit and delete clients
 - [] Implement solution for teams
 - [] Implement a payment solution / Monthly recurring payments
 - [] Deploy

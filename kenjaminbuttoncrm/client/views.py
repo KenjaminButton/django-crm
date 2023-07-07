@@ -6,6 +6,26 @@ from .forms import AddClientForm
 
 
 @login_required
+def clients_edit(request, pk):
+    client = get_object_or_404(Client, created_by=request.user, pk=pk)
+
+    if request.method == 'POST':
+        form = AddClientForm(request.POST, instance=client)
+
+        if form.is_valid():
+            form.save()
+            messages.success(
+                request, 'your client has been edited successfully and saved')
+            return redirect('show_clients')
+    else:
+        form = AddClientForm(instance=client)
+
+    return render(request, 'client/clients_edit.html', {
+        'form': form
+    })
+
+
+@login_required
 def clients_delete(request, pk):
     client = get_object_or_404(Client, created_by=request.user, pk=pk)
     client.delete()
