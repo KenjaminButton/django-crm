@@ -28,7 +28,7 @@
 
 - [x] Delete and edit leads
 - [x] Convert leads to clients
-- [] Show all clients
+- [x] Show all clients
 - [] Show details page of a client
 
 - [] Change and delete clients

@@ -15,7 +15,7 @@
     {% for client in clients %}
         <div class="flex justify-between">
           <p class="px-2 py-2 w-full {% cycle 'bg-slate-100' '' %}">
-            <a href="#">{{ client.name }}</a>
+            <a href="{% url 'clients_detail' client.id %}">{{ client.name }}</a>
           </p>
         </div>
     {% empty %}
