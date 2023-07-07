@@ -6,6 +6,14 @@ from .forms import AddClientForm
 
 
 @login_required
+def clients_delete(request, pk):
+    client = get_object_or_404(Client, created_by=request.user, pk=pk)
+    client.delete()
+    messages.success(request, 'your client has been deleted')
+    return redirect('show_clients')
+
+
+@login_required
 def clients_add(request):
     if request.method == 'POST':
         form = AddClientForm(request.POST)
