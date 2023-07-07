@@ -29,8 +29,9 @@
 - [x] Delete and edit leads
 - [x] Convert leads to clients
 - [x] Show all clients
-- [] Show details page of a client
+- [x] Show details page of a client
 
+- [] Adding a client while skipping leads process
 - [] Change and delete clients
 - [] Implement solution for teams
 - [] Implement a payment solution / Monthly recurring payments
