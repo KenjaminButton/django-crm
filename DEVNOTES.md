@@ -30,8 +30,8 @@
 - [x] Convert leads to clients
 - [x] Show all clients
 - [x] Show details page of a client
+- [x] Adding a client while skipping leads process
 
-- [] Adding a client while skipping leads process
 - [] Change and delete clients
 - [] Implement solution for teams
 - [] Implement a payment solution / Monthly recurring payments
