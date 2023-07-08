@@ -42,10 +42,11 @@
   - [x] If user is logged in and not a member of a team, create one.
   - [x] If user is the owner, make it possible to edit team
 
-- [] Have dashboard list out "n" newest leads and "n" newest clients
+- [x] Have dashboard list out "n" newest leads and "n" newest clients
 
-  - [] Implement feature where being a member of a team is necessary
-  - [] ...
+  - [x] Implement feature where being a member of a team is necessary
+  - [x] Limit # of leads (freemium of max n leads)
+  - [x] Limit # of clients (freemium of max n clients)
 
 - [] Implement a payment solution / Monthly recurring payments
 - [] Deploy

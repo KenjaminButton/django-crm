@@ -12,6 +12,7 @@ from client.models import Client
 def convert_to_client(request, pk):
     lead = get_object_or_404(Lead, created_by=request.user, pk=pk)
     team = Team.objects.filter(created_by=request.user)[0]
+
     client = Client.objects.create(
         name=lead.name,
         email=lead.email,
@@ -74,6 +75,7 @@ def show_leads(request):
 
 @login_required
 def add_lead(request):
+    team = Team.objects.filter(created_by=request.user)[0]
     if request.method == 'POST':
         form = AddLeadForm(request.POST)
         if form.is_valid():
@@ -89,5 +91,6 @@ def add_lead(request):
         form = AddLeadForm()
 
     return render(request, 'lead/addlead.html', {
-        'form': form
+        'form': form,
+        'team': team
     })
