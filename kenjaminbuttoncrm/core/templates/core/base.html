@@ -22,9 +22,12 @@
         <a href="{% url 'showleads' %}" class="px-6 py-4 bg-rose-400 rounded-xl text-white"
         >Show Leads
         </a>
-        <a href="{% url 'logout' %}" class="px-6 py-4 bg-red-400 rounded-xl text-white"
-          >Logout
+        <a href="{% url 'myaccount' %}" class="px-6 py-4 bg-blue-400 rounded-xl text-white">
+          My Account
         </a>
+        <!-- <a href="{% url 'logout' %}" class="px-6 py-4 bg-red-400 rounded-xl text-white"
+          >Logout
+        </a> -->
         {% else  %}
           <a href="{% url 'login' %}" class="px-6 py-4 bg-rose-400 rounded-xl text-white"
             >Log In
