@@ -23,7 +23,7 @@ def convert_to_client(request, pk):
     lead.converted_to_client = True
     lead.save()
     messages.success(request, 'lead has been converted to a client')
-    return redirect('showleads')
+    return redirect('leads:show')
 
 
 @login_required
@@ -47,7 +47,7 @@ def leads_edit(request, pk):
             form.save()
             messages.success(
                 request, 'your lead has been edited successfully and saved')
-            return redirect('showleads')
+            return redirect('leads:show')
     else:
         form = AddLeadForm(instance=lead)
 
@@ -61,7 +61,7 @@ def leads_delete(request, pk):
     lead = get_object_or_404(Lead, created_by=request.user, pk=pk)
     lead.delete()
     messages.success(request, 'your lead has been deleted')
-    return redirect('showleads')
+    return redirect('leads:show')
 
 
 @login_required
@@ -86,7 +86,7 @@ def add_lead(request):
             lead.save()
             messages.success(
                 request, 'your lead has been created successfully')
-            return redirect('showleads')
+            return redirect('leads:show')
     else:
         form = AddLeadForm()
 

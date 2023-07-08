@@ -5,7 +5,7 @@
 {% block content %}
   <div class="px-6 py-6">
     <h1 class="mb-4 text-xl">Leads</h1>
-    <a href="{% url 'addlead' %}" class="px-6 py-4 bg-rose-400 rounded-xl text-white">
+    <a href="{% url 'leads:addlead' %}" class="px-6 py-4 bg-rose-400 rounded-xl text-white">
       Add lead
     </a>
 
@@ -17,7 +17,7 @@
     {% for lead in leads %}
         <div class="flex justify-between">
           <p class="px-2 py-2 w-full {% cycle 'bg-slate-100' '' %}">
-            <a href="{% url 'leadsdetail' lead.id %}">{{ lead.name }}</a>
+            <a href="{% url 'leads:detail' lead.id %}">{{ lead.name }}</a>
           </p>
           <p class="px-2 py-2 w-full {% cycle 'bg-slate-100' '' %}">{{ lead.get_priority_display }}</p>
           <p class="px-2 py-2 w-full {% cycle 'bg-slate-100' '' %}">{{ lead.get_status_display }}</p>
