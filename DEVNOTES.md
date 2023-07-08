@@ -48,6 +48,25 @@
   - [x] Limit # of leads (freemium of max n leads)
   - [x] Limit # of clients (freemium of max n clients)
 
+**Refactoring**
+
+- [] Install Tailwind and stop using CDN
+- [] Add name spaces to all "apps"
+- [] Replace show leads with class based view
+- [] Replace leads detail with class based view
+- [] Replace leads delete with class based view
+- [] Replace leads edit with class based view
+- [] Replace leads add with class based view
+- [] Replace convert leads to client with class based views
+- [] Replace show leads with class based view
+- []
+- []
+- []
+- []
+- []
+- []
+- []
+
 - [] Implement a payment solution / Monthly recurring payments
 - [] Deploy
 
