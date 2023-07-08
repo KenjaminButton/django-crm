@@ -40,7 +40,7 @@
   - [x] When lead is created, guarantee that team is set
   - [x] When client is created, guarantee that team is set
   - [x] If user is logged in and not a member of a team, create one.
-  - [] If user is the owner, make it possible to edit team
+  - [x] If user is the owner, make it possible to edit team
 
 - [] Have dashboard list out "n" newest leads and "n" newest clients
 
