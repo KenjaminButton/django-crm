@@ -37,7 +37,9 @@
 
   - [x] Create teams app
   - [x] Create model for teams
-  - [] Create new teams
+  - [x] When lead is created, guarantee that team is set
+  - [x] When client is created, guarantee that team is set
+
   - [] Implement feature where being a member of a team is necessary
   - [] ...
 
