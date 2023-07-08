@@ -31,9 +31,16 @@
 - [x] Show all clients
 - [x] Show details page of a client
 - [x] Adding a client while skipping leads process
-
 - [x] Edit and delete clients
+
 - [] Implement solution for teams
+
+  - [x] Create teams app
+  - [x] Create model for teams
+  - [] Create new teams
+  - [] Implement feature where being a member of a team is necessary
+  - [] ...
+
 - [] Implement a payment solution / Monthly recurring payments
 - [] Deploy
 
