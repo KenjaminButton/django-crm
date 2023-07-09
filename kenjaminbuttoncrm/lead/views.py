@@ -10,7 +10,7 @@ from django.views.generic import ListView, DetailView, DeleteView, UpdateView, C
 from .forms import AddCommentForm
 from .models import Lead
 from team.models import Team
-from client.models import Client
+from client.models import Client, Comment as ClientComment
 
 
 # @login_required
@@ -206,6 +206,17 @@ class ConvertToClientView(View):
 
         lead.converted_to_client = True
         lead.save()
+        # Converting lead comments to client comments
+        comments = lead.comments.all()
+        for comment in comments:
+            # Comment renamed to ClientComment so as to not clash with lead Comment
+            ClientComment.objects.create(
+                client=client,
+                content=comment.content,
+                created_by=comment.created_by,
+                team=team
+            )
+
         messages.success(request, 'lead has been converted to a client')
         return redirect('leads:list')
 
