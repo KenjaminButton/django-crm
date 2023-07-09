@@ -53,19 +53,16 @@
 - [x] Install Tailwind and stop using CDN
 - [x] Add name spaces to all "apps"
 - [x] Replace show leads with class based view
-- [] Replace leads detail with class based view
-- [] Replace leads delete with class based view
-- [] Replace leads edit with class based view
-- [] Replace leads add with class based view
-- [] Replace convert leads to client with class based views
+- [x] Replace leads detail with class based view
+- [x] Replace leads delete with class based view
+- [x] Replace leads edit with class based view
+- [x] Replace leads add with class based view
+- [x] Replace convert leads to client with class based views
 
-- []
-- []
-- []
-- []
-- []
-- []
-- []
+- [] export info for leads and clients
+- [] leads and clients connection
+- [] add comments
+- [] Upload files to leads and clients
 
 - [] Implement a payment solution / Monthly recurring payments
 - [] Deploy
