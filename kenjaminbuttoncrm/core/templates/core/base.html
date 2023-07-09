@@ -22,10 +22,10 @@
         <a href="{% url 'clients:show' %}" class="px-6 py-4 bg-rose-400 rounded-xl text-white"
         >Show Client
         </a>
-        <a href="{% url 'leads:show' %}" class="px-6 py-4 bg-rose-400 rounded-xl text-white"
+        <a href="{% url 'leads:list' %}" class="px-6 py-4 bg-rose-400 rounded-xl text-white"
         >Show Leads
         </a>
-        <a href="{% url 'myaccount' %}" class="px-6 py-4 bg-blue-400 rounded-xl text-white">
+        <a href="{% url 'userprofile:myaccount' %}" class="px-6 py-4 bg-blue-400 rounded-xl text-white">
           My Account
         </a>
         <!-- <a href="{% url 'logout' %}" class="px-6 py-4 bg-red-400 rounded-xl text-white"
@@ -35,7 +35,7 @@
           <a href="{% url 'login' %}" class="px-6 py-4 bg-rose-400 rounded-xl text-white"
             >Log In
           </a>
-          <a href="{% url 'signup' %}" class="px-6 py-4 bg-rose-300 rounded-xl text-white"
+          <a href="{% url 'userprofile:signup' %}" class="px-6 py-4 bg-rose-300 rounded-xl text-white"
             >Sign Up
           </a>
         {% endif %}

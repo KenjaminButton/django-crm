@@ -14,7 +14,7 @@
       <p class="py-4 px-2 bg-slate-200 font-semibold w-full">Priority</p>
       <p class="py-4 px-2 bg-slate-200 font-semibold w-full">Status</p>
     </div>
-    {% for lead in leads %}
+    {% for lead in object_list %}
         <div class="flex justify-between">
           <p class="px-2 py-2 w-full {% cycle 'bg-slate-100' '' %}">
             <a href="{% url 'leads:detail' lead.id %}">{{ lead.name }}</a>
