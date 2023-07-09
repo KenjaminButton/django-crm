@@ -51,8 +51,8 @@
 **Refactoring**
 
 - [x] Install Tailwind and stop using CDN
-- [] Add name spaces to all "apps"
-- [] Replace show leads with class based view
+- [x] Add name spaces to all "apps"
+- [x] Replace show leads with class based view
 - [] Replace leads detail with class based view
 - [] Replace leads delete with class based view
 - [] Replace leads edit with class based view

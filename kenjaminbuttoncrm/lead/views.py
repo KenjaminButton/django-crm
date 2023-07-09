@@ -2,13 +2,21 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 from .forms import AddLeadForm
 from .models import Lead
 from team.models import Team
 from client.models import Client
 
+
+# @login_required
+# def show_leads(request):
+#     leads = Lead.objects.filter(
+#         created_by=request.user, converted_to_client=False)
+#     return render(request, 'lead/leads_list.html', {
+#         'leads': leads
+#     })
 
 class LeadListView(ListView):
     model = Lead
@@ -23,13 +31,25 @@ class LeadListView(ListView):
             created_by=self.request.user, converted_to_client=False)
 
 
-@login_required
-def show_leads(request):
-    leads = Lead.objects.filter(
-        created_by=request.user, converted_to_client=False)
-    return render(request, 'lead/leads_list.html', {
-        'leads': leads
-    })
+# @login_required
+# def leads_detail(request, pk):
+#     # Django shortcut for the same functionality as below
+#     lead = get_object_or_404(Lead, created_by=request.user, pk=pk)
+#     # lead = Lead.objects.filter(created_by=request.user).get(pk=pk)
+#     return render(request, 'lead/leadsdetail.html', {
+#         'lead': lead
+#     })
+
+class LeadDetailView(DetailView):
+    model = Lead
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
+    def get_queryset(self):
+        queryset = super(LeadDetailView, self).get_queryset()
+        return queryset.filter(created_by=self.request.user, pk=self.kwargs.get('pk'))
 
 
 @login_required
@@ -51,16 +71,6 @@ def convert_to_client(request, pk):
 
 
 @login_required
-def leads_detail(request, pk):
-    # Django shortcut for the same functionality as below
-    lead = get_object_or_404(Lead, created_by=request.user, pk=pk)
-    # lead = Lead.objects.filter(created_by=request.user).get(pk=pk)
-    return render(request, 'lead/leadsdetail.html', {
-        'lead': lead
-    })
-
-
-@login_required
 def leads_edit(request, pk):
     lead = get_object_or_404(Lead, created_by=request.user, pk=pk)
 
@@ -71,7 +81,7 @@ def leads_edit(request, pk):
             form.save()
             messages.success(
                 request, 'your lead has been edited successfully and saved')
-            return redirect('leads:show')
+            return redirect('leads:list')
     else:
         form = AddLeadForm(instance=lead)
 
