@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, DeleteView
 
 from .forms import AddLeadForm
 from .models import Lead
@@ -51,6 +52,31 @@ class LeadDetailView(DetailView):
         queryset = super(LeadDetailView, self).get_queryset()
         return queryset.filter(created_by=self.request.user, pk=self.kwargs.get('pk'))
 
+# @login_required
+# def leads_delete(request, pk):
+#     lead = get_object_or_404(Lead, created_by=request.user, pk=pk)
+#     lead.delete()
+#     messages.success(request, 'your lead has been deleted')
+#     return redirect('leads:show')
+
+
+class LeadDeleteView(DeleteView):
+    model = Lead
+    success_url = reverse_lazy('leads:list')
+
+    # Login decorator
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
+    def get_queryset(self):
+        queryset = super(LeadDeleteView, self).get_queryset()
+
+        return queryset.filter(created_by=self.request.user, pk=self.kwargs.get('pk'))
+
+    def get(self, request, *args, **kwargs):
+        return self.post(request, *args, **kwargs)
+
 
 @login_required
 def convert_to_client(request, pk):
@@ -91,14 +117,6 @@ def leads_edit(request, pk):
 
 
 @login_required
-def leads_delete(request, pk):
-    lead = get_object_or_404(Lead, created_by=request.user, pk=pk)
-    lead.delete()
-    messages.success(request, 'your lead has been deleted')
-    return redirect('leads:show')
-
-
-@login_required
 def add_lead(request):
     team = Team.objects.filter(created_by=request.user)[0]
     if request.method == 'POST':
@@ -111,7 +129,7 @@ def add_lead(request):
             lead.save()
             messages.success(
                 request, 'your lead has been created successfully')
-            return redirect('leads:show')
+            return redirect('leads:list')
     else:
         form = AddLeadForm()
 
