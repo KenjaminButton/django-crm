@@ -226,6 +226,7 @@ class AddCommentView(View):
     def post(self, request, *args, **kwargs):
         pk = kwargs.get('pk')
         form = AddCommentForm(request.POST)
+
         if form.is_valid():
             team = Team.objects.filter(created_by=self.request.user)[0]
             comment = form.save(commit=False)
@@ -233,5 +234,21 @@ class AddCommentView(View):
             comment.created_by = request.user
             comment.lead_id = pk
             comment.save()
+
+        return redirect('leads:detail', pk=pk)
+
+
+class AddFileView(View):
+    def post(self, request, *args, **kwargs):
+        pk = kwargs.get('pk')
+        form = AddFileForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            team = Team.objects.filter(created_by=self.request.user)[0]
+            file = form.save(commit=False)
+            file.team = team
+            file.lead_id = pk
+            file.created_by = request.user
+            file.save()
 
         return redirect('leads:detail', pk=pk)

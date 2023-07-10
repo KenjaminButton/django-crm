@@ -58,7 +58,7 @@
     <hr class="my-4">
     <h2 class="mb-6 text-xl">Files</h2>
 
-    <form method="post" action=".">
+    <form method="post" action="{% url 'leads:add_file' lead.id %}" enctype="multipart/form-data">
       {% csrf_token %}
       {{ fileform.as_p }}
 
@@ -68,3 +68,4 @@
     <a href="{% url 'leads:list' %}">Back to leads</a>
   </div>
 {% endblock %}
+
