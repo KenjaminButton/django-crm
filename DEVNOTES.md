@@ -62,7 +62,9 @@
 - [x] add comments for leads and clients
 - [x] export info for leads and clients
 - [x] leads and clients connection
-- [] Upload files to leads and clients
+- [x] Upload files to leads and clients
+
+- [x] Replaced the dispatch with loginrequiredmixin
 
 - [] Implement a payment solution / Monthly recurring payments
 - [] Deploy
