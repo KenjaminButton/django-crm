@@ -64,7 +64,11 @@
 - [x] leads and clients connection
 - [x] Upload files to leads and clients
 
-- [x] Replaced the dispatch with loginrequiredmixin
+- [x] Replace the dispatch with loginrequiredmixin
+- [x] Show active team in menu
+- [] Team detail page with member list
+- [] Clean up base.html with includes
+- [] Fix styling for login and signup
 
 - [] Implement a payment solution / Monthly recurring payments
 - [] Deploy

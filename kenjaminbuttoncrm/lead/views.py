@@ -14,7 +14,7 @@ from team.models import Team
 from client.models import Client, Comment as ClientComment
 
 
-@login_required
+# @login_required
 def leads_export(request):
     leads = Lead.objects.filter(created_by=request.user)
     response = HttpResponse(
