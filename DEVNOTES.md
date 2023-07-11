@@ -60,8 +60,8 @@
 - [x] Replace convert leads to client with class based views
 
 - [x] add comments for leads and clients
-- [] export info for leads and clients
-- [] leads and clients connection
+- [x] export info for leads and clients
+- [x] leads and clients connection
 - [] Upload files to leads and clients
 
 - [] Implement a payment solution / Monthly recurring payments

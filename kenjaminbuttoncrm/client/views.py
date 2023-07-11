@@ -1,9 +1,28 @@
+import csv
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 from .models import Client
 from team.models import Team
 from .forms import AddClientForm, AddCommentForm, AddFileForm
+
+
+@login_required
+def clients_export(request):
+    clients = Client.objects.filter(created_by=request.user)
+    response = HttpResponse(
+        content_type='text/css',
+        headers={'Content-Disposition': 'attachment; filename="clients.csv"'},
+    )
+    writer = csv.writer(response)
+    writer.writerow(["Client", "Description", "Created at", "Created by"])
+
+    for client in clients:
+        writer.writerow([client.name, client.description,
+                        client.created_at, client.created_by])
+
+    return response
 
 
 @login_required

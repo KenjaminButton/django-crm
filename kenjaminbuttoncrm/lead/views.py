@@ -1,7 +1,8 @@
-from typing import Any, Dict
+import csv
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views import View
@@ -11,6 +12,23 @@ from .forms import AddCommentForm, AddFileForm
 from .models import Lead
 from team.models import Team
 from client.models import Client, Comment as ClientComment
+
+
+@login_required
+def leads_export(request):
+    leads = Lead.objects.filter(created_by=request.user)
+    response = HttpResponse(
+        content_type='text/css',
+        headers={'Content-Disposition': 'attachment; filename="leads.csv"'},
+    )
+    writer = csv.writer(response)
+    writer.writerow(["Lead", "Description", "Created at", "Created by"])
+
+    for lead in leads:
+        writer.writerow([lead.name, lead.description,
+                        lead.created_at, lead.created_by])
+
+    return response
 
 
 # @login_required
