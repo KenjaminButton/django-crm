@@ -66,7 +66,7 @@
 
 - [x] Replace the dispatch with loginrequiredmixin
 - [x] Show active team in menu
-- [] Team detail page with member list
+- [x] Team detail page with member list
 - [] Clean up base.html with includes
 - [] Fix styling for login and signup
 
