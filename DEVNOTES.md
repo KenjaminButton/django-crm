@@ -70,6 +70,12 @@
 - [x] Clean up base.html with includes
 - [x] Fix styling for login and signup
 
+- [x] Fix new user sign up
+- [x] Team plan defaults to free (don't need a plan)
+- [x] Add an extra field to userprofile to track active team
+- [x]
+- [x]
+
 - [] Implement a payment solution / Monthly recurring payments
 - [] Deploy
 
