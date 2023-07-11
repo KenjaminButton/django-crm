@@ -67,8 +67,8 @@
 - [x] Replace the dispatch with loginrequiredmixin
 - [x] Show active team in menu
 - [x] Team detail page with member list
-- [] Clean up base.html with includes
-- [] Fix styling for login and signup
+- [x] Clean up base.html with includes
+- [x] Fix styling for login and signup
 
 - [] Implement a payment solution / Monthly recurring payments
 - [] Deploy
