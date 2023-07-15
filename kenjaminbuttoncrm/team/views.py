@@ -7,6 +7,12 @@ from .models import Team
 
 
 @login_required
+def teams_show(request):
+    teams = Team.objects.filter(members__in=[request.user])
+    return render(request, 'team/teams_show.html', {'teams': teams})
+
+
+@login_required
 def detail(request, pk):
     team = get_object_or_404(Team, created_by=request.user, pk=pk)
     return render(request, 'team/team_detail.html', {'team': team})

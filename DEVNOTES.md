@@ -73,8 +73,8 @@
 - [x] Fix new user sign up
 - [x] Team plan defaults to free (don't need a plan)
 - [x] Add an extra field to userprofile to track active team
-- [x]
-- [x]
+- [x] Allow user to switch teams
+- [x] Convert hard coded team selector to dynamic
 
 - [] Implement a payment solution / Monthly recurring payments
 - [] Deploy

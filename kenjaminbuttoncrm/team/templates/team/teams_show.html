@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Teams {% endblock %}
+
+{% block content %}
+  <div class="px-6 py-6">
+    <h1 class="text-xl">Teams</h1>
+
+    <div class="grid grid-cols-4 gap-4">
+      {% for team in teams %}
+        <div class="bg-gray-100 rounded-xl p-6">
+          <h2 class="text-xl">{{ team.title }}</h2>
+          <a href="#">Active</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
